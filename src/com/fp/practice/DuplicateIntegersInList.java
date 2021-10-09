@@ -2,6 +2,7 @@ package com.fp.practice;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -9,7 +10,7 @@ import java.util.Set;
  * Q3 How to find duplicate elements in a given integers list in java using Stream functions?
  * Output: 11 22 33 44
  */
-public class DuolicateIntegersInList {
+public class DuplicateIntegersInList {
 
 	public static void main(String[] args) {
 		
