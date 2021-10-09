@@ -31,6 +31,13 @@ public class FindClosestValueInBst {
 	    return findClosestValueInBstOptimalSolution(tree, target, tree.value);
 	  }
 
+	/**
+	 * This is first Solution which is not Optimal
+	 * @param tree
+	 * @param target
+	 * @param closest
+	 * @return
+	 */
 	public static int findClosestValueInBst(BST tree, int target, int closest) {
 		
 		if(Math.abs(target-closest) < Math.abs(target - tree.value)) {
@@ -45,6 +52,13 @@ public class FindClosestValueInBst {
 		}
 	}
 	
+	/**
+	 * This is 2nd Solution which is Optimal Solution
+	 * @param tree
+	 * @param target
+	 * @param closest
+	 * @return
+	 */
 	public static int findClosestValueInBstOptimalSolution(BST tree, int target, int closest) {
 		BST currentNode = tree;
 		while(currentNode!=null) {
