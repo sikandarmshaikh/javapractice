@@ -4,31 +4,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+ * Find the Sum of all the branches in a Binary Tree
+ * The branch sum is like calculating sum of all the nodes that lead to a leaf node
+ * The total number of sums will be equal to total number of Leaf nodes
  * 
- * 
- * Output: 
+ * Output: 15 16 18 10 11 
  */
 public class BranchSums {
 
 	public static void main(String[] args) {
 		
-		BinaryTree bt = new BinaryTree(0);
-		bt.value = 1;
-		bt.left.value = 2;
-		bt.right.value = 3;
-		bt.left.left.value = 4;
-		bt.left.right.value = 5;
-		bt.right.left.value = 6;
-		bt.right.right.value = 7;
-		bt.left.left.left.value = 8;
-		bt.left.left.right.value = 9;
-		bt.left.right.left.value = 10;
+		BinaryTree bt = new BranchSums.BinaryTree(1);
+		//bt.value = new BranchSums.BinaryTree(1);
+		bt.left = new BranchSums.BinaryTree(2);
+		bt.right = new BranchSums.BinaryTree(3);
+		bt.left.left = new BranchSums.BinaryTree(4);
+		bt.left.right = new BranchSums.BinaryTree(5);
+		bt.right.left = new BranchSums.BinaryTree(6);
+		bt.right.right = new BranchSums.BinaryTree(7);
+		bt.left.left.left = new BranchSums.BinaryTree(8);
+		bt.left.left.right = new BranchSums.BinaryTree(9);
+		bt.left.right.left = new BranchSums.BinaryTree(10);
 		
 		List<Integer> sums = BranchSums.branchSums(bt);
-		for (Integer value : sums) {
-			System.out.print(value+",");
+		/*for (Integer value : sums) {
+			System.out.print(value+" ");
 		}
-		//sums.stream().forEach(System.out::println);
+		System.out.println();*/
+		sums.stream().forEach(System.out::println);
 	}
 	
 	public static List<Integer> branchSums(BinaryTree root) {

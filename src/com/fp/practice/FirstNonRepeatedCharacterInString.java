@@ -14,7 +14,7 @@ import java.util.function.Function;
 public class FirstNonRepeatedCharacterInString {
 
 	public static void main(String[] args) {
-		String input = "Java 8 Functional prgramming is Awesome";
+		String input = "Functional prgramming in Java";
 		Character result = input.chars()  // Stream of String
 						   .mapToObj(s->Character.toLowerCase(Character.valueOf((char) s))) // First convert to Character object and then to lowercase
 							// Store the Chars in map with Count 
