@@ -14,6 +14,8 @@ public class BranchSums {
 
 	public static void main(String[] args) {
 		
+		Collec
+		
 		BinaryTree bt = new BranchSums.BinaryTree(1);
 		//bt.value = new BranchSums.BinaryTree(1);
 		bt.left = new BranchSums.BinaryTree(2);
@@ -41,6 +43,23 @@ public class BranchSums {
 	  }
 	
 	public static void calculateBranchSums(BinaryTree node, int runningSum, List<Integer> sums) {
+		
+		long correctCnt = 0, checkedExcCnt = 0, uncheckedExcCnt = 0, otherExcCnt = 0; 
+		
+		try {
+			
+		} catch (Error e) {
+			otherExcCnt++;
+		} catch(RuntimeException re) {
+			uncheckedExcCnt++;
+		} catch(Exception e) {
+			checkedExcCnt++;
+		}
+		
+		for (Integer integer : sums) {
+			
+		}
+		
 		if(node == null)
 			return;
 		
@@ -55,10 +74,10 @@ public class BranchSums {
 
 	public static class BinaryTree {
 		int value;
-		BinaryTree left;
-		BinaryTree right;
+		protected BinaryTree left;
+		protected BinaryTree right;
 
-		BinaryTree(int value) {
+		protected BinaryTree(int value) {
 			this.value = value;
 			this.left = null;
 			this.right = null;

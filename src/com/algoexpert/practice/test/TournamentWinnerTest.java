@@ -1,4 +1,4 @@
-package com.algoexpert.practice;
+package com.algoexpert.practice.test;
 
 import static org.junit.Assert.assertTrue;
 
@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.junit.Test;
+
+import com.algoexpert.practice.TournamentWinner;
 
 public class TournamentWinnerTest {
 

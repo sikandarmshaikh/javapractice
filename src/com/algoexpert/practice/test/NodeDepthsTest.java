@@ -1,9 +1,10 @@
-package com.algoexpert.practice;
+package com.algoexpert.practice.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 
+import com.algoexpert.practice.NodeDepths;
 import com.algoexpert.practice.NodeDepths.BinaryTree;
 
 public class NodeDepthsTest {

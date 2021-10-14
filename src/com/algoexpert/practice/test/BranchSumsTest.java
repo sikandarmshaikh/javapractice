@@ -1,4 +1,4 @@
-package com.algoexpert.practice;
+package com.algoexpert.practice.test;
 
 import static org.junit.Assert.assertTrue;
 
@@ -7,6 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
+
+import com.algoexpert.practice.BranchSums;
+import com.algoexpert.practice.BranchSums.BinaryTree;
 
 public class BranchSumsTest {
 

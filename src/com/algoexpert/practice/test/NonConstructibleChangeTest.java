@@ -1,8 +1,10 @@
-package com.algoexpert.practice;
+package com.algoexpert.practice.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Test;
+
+import com.algoexpert.practice.NonConstructibleChange;
 
 
 public class NonConstructibleChangeTest {

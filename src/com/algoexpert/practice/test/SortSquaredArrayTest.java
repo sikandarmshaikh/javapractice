@@ -1,4 +1,4 @@
-package com.algoexpert.practice;
+package com.algoexpert.practice.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -8,6 +8,8 @@ import java.util.Collections;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+
+import com.algoexpert.practice.SortSquaredArray;
 
 class SortSquaredArrayTest {
 

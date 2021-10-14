@@ -36,8 +36,8 @@ public class NodeDepths {
 
 	public static class BinaryTree {
 		int value;
-		BinaryTree left;
-		BinaryTree right;
+		public BinaryTree left;
+		public BinaryTree right;
 
 		public BinaryTree(int value) {
 			this.value = value;
