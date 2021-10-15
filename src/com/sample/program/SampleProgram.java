@@ -4,7 +4,7 @@ import java.util.stream.Stream;
 
 class SampleProgram {
 
-  private final ProductVerifier verifier;
+  /*private final ProductVerifier verifier;
 
   ProductionLineTester(ProductVerifier verifier) {
     this.verifier = verifier;
@@ -15,6 +15,6 @@ class SampleProgram {
     verifier.verify()
 
     return null;
-  }
+  }*/
 
 }
