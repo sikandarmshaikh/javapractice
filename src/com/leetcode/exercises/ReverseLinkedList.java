@@ -1,14 +1,11 @@
 package com.leetcode.exercises;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 /**
  * 
  * @author Sikandar
  * 
  * Program to reverse a linkedlist using iterative and recursive methods
- * 
+ * Input: 1 2 3 4 5
  * Output::
  * Iterative: 5
  * Iterative: 4
@@ -35,23 +32,6 @@ public class ReverseLinkedList {
 			this.data = data;
 			this.next = next;
 		}
-
-		public int getData() {
-			return data;
-		}
-
-		public ListNode getNext() {
-			return next;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public void setNext(ListNode next) {
-			this.next = next;
-		}
-		
 	}
 	
 	/**
@@ -106,37 +86,19 @@ public class ReverseLinkedList {
 		return p;
 	}
 	
-	public static ListNode constructLinkedList() {
-
-		ListNode head = null;
-		ListNode tail = null;
-		for (int i = 0; i <= 5; i++) {
-			ListNode node = new ListNode(i);
-			if (head == null) {
-				head = node;
-			} else {
-				tail.setNext(node);
-			}
-			tail = node;
-		}
-		return head;
-	}
-
-	
 	public static void main(String[] args) {
 		
-		ListNode head = constructLinkedList();
-		ListNode node = head;
-		for (int i = 0; i <= 5; i++) {
-			node = node.getNext();
-		}
-		node = ReverseLinkedList.reverseList(head);
-		//node = ReverseLinkedList.reverseListRecursively(head);
+		ListNode head = new ListNode(1);
+		head.next = new ListNode(2);
+		head.next.next = new ListNode(3);
+		head.next.next.next = new ListNode(4);
+		head.next.next.next.next = new ListNode(5);
+		
+		ListNode node = ReverseLinkedList.reverseList(head);
+		//ListNode node = ReverseLinkedList.reverseListRecursively(head);
 		for (int i = 5; i >= 1; i--) {
-			assertNotNull(node);
-			assertEquals(i, node.getData());
-			System.out.println("Iterative: " + node.getData());
-			node = node.getNext();
+			System.out.println("Iterative: " + node.data);
+			node = node.next;
 		}
 	}
 

@@ -9,55 +9,37 @@ import com.leetcode.exercises.ReverseLinkedList.ListNode;
 
 public class ReverseLinkedListTest {
 
-	ListNode constructLinkedList() {
-
-		ListNode head = null;
-		ListNode tail = null;
-		for (int i = 0; i <= 5; i++) {
-			ListNode node = new ListNode(i);
-			if (head == null) {
-				head = node;
-			} else {
-				tail.setNext(node);
-			}
-			tail = node;
-		}
-		return head;
-	}
-
 	@Test
 	public void iterativelyReverseListTestCase() {
-		ListNode head = constructLinkedList();
-		ListNode node = head;
-		for (int i = 0; i <= 5; i++) {
-			assertNotNull(node);
-			assertEquals(i, node.getData());
-			node = node.getNext();
-		}
-		node = ReverseLinkedList.reverseList(head);
+		ListNode head = new ListNode(1);
+		head.next = new ListNode(2);
+		head.next.next = new ListNode(3);
+		head.next.next.next = new ListNode(4);
+		head.next.next.next.next = new ListNode(5);
+		
+		ListNode node = ReverseLinkedList.reverseList(head);
 		for (int i = 5; i >= 1; i--) {
 			assertNotNull(node);
-			assertEquals(i, node.getData());
-			System.out.println("Iterative: " + node.getData());
-			node = node.getNext();
+			assertEquals(i, node.data);
+			System.out.println("Iterative: " + node.data);
+			node = node.next;
 		}
 	}
 	
 	@Test
 	public void RecursivelyReverseListTestCase() {
-		ListNode head = constructLinkedList();
-		ListNode node = head;
-		for (int i = 0; i <= 5; i++) {
-			assertNotNull(node);
-			assertEquals(i, node.getData());
-			node = node.getNext();
-		}
-		node = ReverseLinkedList.reverseListRecursively(head);
+		ListNode head = new ListNode(1);
+		head.next = new ListNode(2);
+		head.next.next = new ListNode(3);
+		head.next.next.next = new ListNode(4);
+		head.next.next.next.next = new ListNode(5);
+		
+		ListNode node = ReverseLinkedList.reverseListRecursively(head);
 		for (int i = 5; i >= 1; i--) {
 			assertNotNull(node);
-			assertEquals(i, node.getData());
-			System.out.println("Recursive: " + node.getData());
-			node = node.getNext();
+			assertEquals(i, node.data);
+			System.out.println("Iterative: " + node.data);
+			node = node.next;
 		}
 	}
 
