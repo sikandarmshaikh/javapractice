@@ -14,8 +14,6 @@ public class BranchSums {
 
 	public static void main(String[] args) {
 		
-		Collec
-		
 		BinaryTree bt = new BranchSums.BinaryTree(1);
 		//bt.value = new BranchSums.BinaryTree(1);
 		bt.left = new BranchSums.BinaryTree(2);
