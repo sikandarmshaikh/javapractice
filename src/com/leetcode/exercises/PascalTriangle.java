@@ -13,6 +13,22 @@ import java.util.List;
 public class PascalTriangle {
 	
 	public static List<List<Integer>> generate(int numRows){
+		
+		/*List<List<Integer>> all_rows = new ArrayList<List<Integer>>();
+		List<Integer> rows = new ArrayList<Integer>();
+		for (int i = 0; i < numRows; i++) {
+			rows.add(0,1);
+			
+			//Execute just one line for this inner For Loop
+			for (int j = 1; j < rows.size()-1; j++) 
+				rows.set(j,rows.get(j)+rows.get(j+1));
+				
+				all_rows.add(new ArrayList<Integer>(rows));
+		}
+			return all_rows;
+		}*/
+		
+		
 		List<List<Integer>> all_rows = new ArrayList<List<Integer>>(); //result
         List<Integer> row = new ArrayList<Integer>();
         for(int i=0;i<numRows;i++) {
