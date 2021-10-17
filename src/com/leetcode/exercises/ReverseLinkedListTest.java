@@ -42,5 +42,4 @@ public class ReverseLinkedListTest {
 			node = node.next;
 		}
 	}
-
 }
