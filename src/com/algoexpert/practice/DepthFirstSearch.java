@@ -37,6 +37,14 @@ public class DepthFirstSearch {
 	  }
 	
 	public static void main(String[] args) {
+		
+		 // Given String
+	    String s = "50552";
+	 
+	    // Function call
+	    int i = largestSubsequence(s);
+	    System.out.println("largestSubsequence:: "+i);
+		
 		DepthFirstSearch.Node graph = new DepthFirstSearch.Node("A");
 		graph.addChild("B").addChild("C").addChild("D");
 		graph.children.get(0).addChild("E").addChild("F");
@@ -60,4 +68,69 @@ public class DepthFirstSearch {
 		}
 		return true;
 	}
+	
+	public int Solution(String s) {
+		
+		return 1;
+	}
+	
+	static int largestSubsequence(String s1)
+	{
+		char[] s = s1.toCharArray();
+	    // Variable initialization
+	    int maxi = 0;
+	    char prev1;
+	 
+	    // Nested loops for iteration
+	    for (int i = 0; i < 10; i++)
+	    {
+	        for (int j = 0; j < 10; j++)
+	        {
+	 
+	            // Check if i is not equal to j
+	            if (i != j)
+	            {
+	 
+	                // Initialize length as 0
+	                int len = 0;
+	                prev1 = (char) (j + '0');
+	 
+	                // Iterate from 0 till the
+	                // size of the String
+	                for (int k = 0; k < s.length; k++)
+	                {
+	                    if (s[k] == i + '0' &&
+	                        prev1 == j + '0')
+	                    {
+	                        prev1 = s[k];
+	 
+	                        // Increment length
+	                        len++;
+	                    }
+	                    else if (s[k] == j + '0' &&
+	                             prev1 == i + '0')
+	                    {
+	                        prev1 = s[k];
+	 
+	                        // Increment length
+	                        len++;
+	                    }
+	                }
+	 
+	                // Update maxi
+	                maxi = Math.max(len, maxi);
+	            }
+	        }
+	    }
+	 
+	    // Check if maxi is not equal to
+	    // 1 the print it otherwise print 0
+	    if (maxi != 1)
+	        //System.out.print(maxi + "\n");
+	    	return maxi;
+	    else
+	    	return 0;
+	        //System.out.print(0 + "\n");
+	}
+	
 }

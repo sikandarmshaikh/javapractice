@@ -11,6 +11,24 @@ import java.util.List;
  * Output: 15 16 18 10 11 
  */
 public class BranchSums {
+	
+	public static class BinaryTree {
+		int value;
+		protected BinaryTree left;
+		protected BinaryTree right;
+
+		protected BinaryTree(int value) {
+			this.value = value;
+			this.left = null;
+			this.right = null;
+		}
+		
+		protected BinaryTree(int value, BinaryTree left, BinaryTree right) {
+			this.value = value;
+			this.left = left;
+			this.right = right;
+		}
+	}
 
 	public static void main(String[] args) {
 		
@@ -26,7 +44,7 @@ public class BranchSums {
 		bt.left.left.right = new BranchSums.BinaryTree(9);
 		bt.left.right.left = new BranchSums.BinaryTree(10);
 		
-		List<Integer> sums = BranchSums.branchSums(bt);
+		List<Integer> sums = branchSums(bt);
 		/*for (Integer value : sums) {
 			System.out.print(value+" ");
 		}
@@ -41,45 +59,14 @@ public class BranchSums {
 	  }
 	
 	public static void calculateBranchSums(BinaryTree node, int runningSum, List<Integer> sums) {
-		
-		long correctCnt = 0, checkedExcCnt = 0, uncheckedExcCnt = 0, otherExcCnt = 0; 
-		
-		try {
-			
-		} catch (Error e) {
-			otherExcCnt++;
-		} catch(RuntimeException re) {
-			uncheckedExcCnt++;
-		} catch(Exception e) {
-			checkedExcCnt++;
-		}
-		
-		for (Integer integer : sums) {
-			
-		}
-		
-		if(node == null)
-			return;
-		
-		int newRunningSum = runningSum + node.value;
-		if(node.left == null && node.right == null) {
-			sums.add(newRunningSum);
-			return;
-		}
-		calculateBranchSums(node.left, newRunningSum, sums);
-		calculateBranchSums(node.right, newRunningSum, sums);
-	}
-
-	public static class BinaryTree {
-		int value;
-		protected BinaryTree left;
-		protected BinaryTree right;
-
-		protected BinaryTree(int value) {
-			this.value = value;
-			this.left = null;
-			this.right = null;
+		if(node!=null) {
+			int newRunningSum = runningSum + node.value;
+			if(node.left == null && node.right == null) {
+				sums.add(newRunningSum);
+				return;
+			}
+			calculateBranchSums(node.left, newRunningSum, sums);
+			calculateBranchSums(node.right, newRunningSum, sums);
 		}
 	}
-
 }
