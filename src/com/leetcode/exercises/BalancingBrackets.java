@@ -3,7 +3,7 @@ package com.leetcode.exercises;
 import java.util.Iterator;
 import java.util.Stack;
 
-public class Assessment2 {
+public class BalancingBrackets {
 
 	/**
 	 * 1. "()" -> true
@@ -35,9 +35,12 @@ public class Assessment2 {
 		char openFB = '{';
 		char closeFB = '}';
 		
-		/*for (int i = 1; i <= 12; i++) {
-			System.out.println("Is i"+i+" String valid: "+isStringValid("i"+i));
-		}*/
+		for (int i = 1; i <= 12; i++) {
+			//System.out.println("i"+i);
+			String str = "i"+i;
+			System.out.println(isStringValid(str));
+			//System.out.println("Is i"+i+" String valid: "+isStringValid("i"+i));
+		}
 		Boolean isValidString =  isStringValid(i4);
 		System.out.println(i4+" isValidString : "+ isValidString);
 		

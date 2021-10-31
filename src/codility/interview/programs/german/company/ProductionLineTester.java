@@ -1,4 +1,4 @@
-package codility.interview.programs;
+package codility.interview.programs.german.company;
 
 /*
 import java.util.stream.Stream;
