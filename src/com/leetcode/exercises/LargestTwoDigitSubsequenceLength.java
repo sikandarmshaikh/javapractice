@@ -1,9 +1,7 @@
 package com.leetcode.exercises;
 
-import java.util.*;
-
 //Java program for the above approach
-class LargestTwoDigitSubsequence {
+class LargestTwoDigitSubsequenceLength {
 
 //Function to find the length of the
 //largest subsequence consisting of
@@ -58,6 +56,8 @@ class LargestTwoDigitSubsequence {
 	public static void main(String[] args) {
 		// Given String
 		String s = "50552";
+		Integer i = Integer.MAX_VALUE;
+		System.out.println(i);
 
 		// Function call
 		largestSubsequence(s.toCharArray());

@@ -9,12 +9,16 @@ package com.leetcode.exercises;
  * example, "ace" is a subsequence of "abcde". A common subsequence of two
  * strings is a subsequence that is common to both strings.
  *
+ * Output:
+ * subsequenceLength is 3
+ * subsequenceLength is 4
+ * subsequenceLength is 0
  */
 public class LongestCommonSubsequence {
 
 	public static void main(String[] args) {
 
-		String s1 = "abcde", s2 = "ace", s3 = "abcdefg", s4 = "abcd", s5 = "abc", s6 = "def";
+		String s1 = "abcde", s2 = "ace", s3 = "agbecfd", s4 = "abcd", s5 = "abc", s6 = "def";
 		int subsequenceLength1 = longestCommonSubsequence(s1, s2);
 		System.out.println("subsequenceLength is " + subsequenceLength1);
 		int subsequenceLength2 = longestCommonSubsequence(s3, s4);

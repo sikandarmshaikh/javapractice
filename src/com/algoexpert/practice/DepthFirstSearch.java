@@ -5,6 +5,17 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * Input Graph
+ * 								A
+ * 						B		C		 D
+ * 					  E   F   G	  H	   I   J	
+ * 					 	 I J   K
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  * Depth First Search
  * Input Array: "A","B","E","F","I","J","C","D","G","K","H"
  * expected Array: "A","B","E","F","I","J","C","D","G","K","H"
@@ -21,13 +32,13 @@ public class DepthFirstSearch {
 	      this.name = name;
 	    }
 
-	    public List<String> depthFirstSearch(List<String> array) {
-	      array.add(this.name);
+		public List<String> depthFirstSearch(List<String> array) {
+			array.add(this.name);
 			for (int i = 0; i < children.size(); i++) {
 				children.get(i).depthFirstSearch(array);
 			}
-				return array;
-	    }
+			return array;
+		}
 
 	    public Node addChild(String name) {
 	      Node child = new Node(name);
