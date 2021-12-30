@@ -94,8 +94,8 @@ public class ReverseLinkedList {
 		head.next.next.next = new ListNode(4);
 		head.next.next.next.next = new ListNode(5);
 		
-		ListNode node = ReverseLinkedList.reverseList(head);
-		//ListNode node = ReverseLinkedList.reverseListRecursively(head);
+		//ListNode node = ReverseLinkedList.reverseList(head);
+		ListNode node = ReverseLinkedList.reverseListRecursively(head);
 		for (int i = 5; i >= 1; i--) {
 			System.out.println("Iterative: " + node.data);
 			node = node.next;

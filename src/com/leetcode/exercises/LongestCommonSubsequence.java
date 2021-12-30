@@ -1,6 +1,7 @@
 package com.leetcode.exercises;
 
 /**
+ * https://leetcode.com/problems/longest-substring-without-repeating-characters/
  * https://leetcode.com/problems/longest-common-subsequence/ Given two strings
  * text1 and text2, return the length of their longest common subsequence. If
  * there is no common subsequence, return 0. A subsequence of a string is a new
@@ -25,6 +26,14 @@ public class LongestCommonSubsequence {
 		System.out.println("subsequenceLength is " + subsequenceLength2);
 		int subsequenceLength3 = longestCommonSubsequence(s5, s6);
 		System.out.println("subsequenceLength is " + subsequenceLength3);
+		
+		//2nd Method
+		System.out.println("************************************");
+		System.out.println("Length of Longest Substring is "+lengthOfLongestSubstring(s1));
+		System.out.println("Length of Longest Substring is "+lengthOfLongestSubstring(s2));
+		System.out.println("Length of Longest Substring is "+lengthOfLongestSubstring(s3));
+		System.out.println("Length of Longest Substring is "+lengthOfLongestSubstring(s4));
+		System.out.println("Length of Longest Substring is "+lengthOfLongestSubstring(s5));
 
 	}
 
@@ -48,5 +57,29 @@ public class LongestCommonSubsequence {
 		}
 		return dp[size1][size2];
 	}
+	
+	public static int lengthOfLongestSubstring(String s) {
+        int[] chars = new int[128];
+
+        int left = 0;
+        int right = 0;
+
+        int res = 0;
+        while (right < s.length()) {
+            char r = s.charAt(right);
+            chars[r]++;
+
+            while (chars[r] > 1) {
+                char l = s.charAt(left);
+                chars[l]--;
+                left++;
+            }
+
+            res = Math.max(res, right - left + 1);
+
+            right++;
+        }
+        return res;
+    }
 
 }
