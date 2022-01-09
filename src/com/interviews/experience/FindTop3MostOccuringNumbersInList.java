@@ -1,15 +1,16 @@
 package com.interviews.experience;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
  * JPMC 4th Round
- * 
+ * Find the Top 3 Brokers who are appearing most of the times in the ArrayList
  *
  */
-public class Assessment2 {
+public class FindTop3MostOccuringNumbersInList {
 	
 	
 	
@@ -23,35 +24,20 @@ public class Assessment2 {
 	private static List<Integer> topBrokers(int[] input, int k) {
 		
 		Map<Integer, Integer> map = new HashMap<>();
+		List<Integer> result = new ArrayList<>();
 		int counter = 0;
 		for (int i = 0; i < input.length; i++) {
 			int j = i+1;
 			if(i==j) {
 				map.put(input[i], counter++);
-			}
-			
-			
-			
-		}
-		
-		
-		for (int i = 0; i < input.length; i++) {
-			for (int j = 1; j < input.length; j++) {
-				if(map.get(i)==map.get(j)) {
-					map.put(i, counter++);
-				}
+				map.getOrDefault(result, null);
 			}
 		}
 		
-		for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-			
-			System.out.println(entry.getKey());
-			System.out.println(entry.getValue());
-			/*keyType key = entry.getKey();
-			valType val = entry.getValue();*/
-			
-		}
+		result.add(map.get(0));
+		result.add(map.get(1));
+		result.add(map.get(2));
 		
-		return null;
+		return result;
 	}
 }
