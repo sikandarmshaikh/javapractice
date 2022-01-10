@@ -23,7 +23,6 @@ public class RateLimiter {
 
 
 
-	//漏桶算法
 	public boolean limit1(){
 	    long currentTime = System.currentTimeMillis();
 	    curentSize = (int)Math.max(0,curentSize - (currentTime - now) *rate);
@@ -36,7 +35,6 @@ public class RateLimiter {
 	    }
 	}
 
-	//令牌桶算法
 	public boolean limit2(){
 	    long currentTime = System.currentTimeMillis();
 	    curentSize = (int)Math.min(size,curentSize + (currentTime - now) *rate);
@@ -49,7 +47,7 @@ public class RateLimiter {
 	    }
 	}
 
-	//固定窗口
+	
 	public boolean limit3(){
 	    long currentTime = System.currentTimeMillis();
 	    if(currentTime -now>1000){
@@ -62,7 +60,6 @@ public class RateLimiter {
 
 	}
 
-	//滑动窗口
 	public boolean limit4(){
 	    long currentTime = System.currentTimeMillis();
 	    if(currentTime -now>1000){
@@ -74,7 +71,6 @@ public class RateLimiter {
 	    return count.get() > maxPreSecondVisit ? false : true;
 	}
 
-	//滑动窗口
 	public static  class SlideWindowRateLimiter {
 	    private AtomicInteger[] buckets;
 	    private int index=0;
