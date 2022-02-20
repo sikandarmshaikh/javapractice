@@ -1,6 +1,8 @@
 package java8.programming;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FP02Functional {
 
@@ -19,12 +21,58 @@ public class FP02Functional {
 		printDistinctNumbersInList(numbers);
 		printDisinctSortedNumbersInList(numbers);
 		printAllCoursesAsSorted(courses);
+		printAllCoursesAsSortedInReverseOrder(courses);
+		printAllCoursesAsSortedInLengthrder(courses);
+		printNumbersInReverseSortedOrder(numbers);
+		//Double(Square) All the Numbers and print them
+		printSquaresOfNumbersInList(numbers);
+		printListOfEvenNumbersFromAList(numbers);
+		// Create a list with length of all Course titles
+		printListOfCoursesWithAllCourseTitles(courses);
 		
 	}
 	
+	private static void printListOfCoursesWithAllCourseTitles(List<String> courses) {
+		List<Integer> coursesWithTitles = courses.stream().map(x -> x.length())
+				.collect(Collectors.toList());
+		System.out.println("Length of All the Courses are ::");
+		System.out.println(coursesWithTitles);
+	}
+
+	private static void printListOfEvenNumbersFromAList(List<Integer> numbers) {
+		List<Integer> EvenNumbersList = numbers.stream().filter(x -> x%2==0)
+				.collect(Collectors.toList());
+		System.out.println("Even Numbers are ::");
+		System.out.println(EvenNumbersList);
+	}
+
+	//Double the numbers in a List and print them
+	private static void printSquaresOfNumbersInList(List<Integer> numbers) {
+		List<Integer> doubleList = numbers.stream().map(x -> x*x).collect(Collectors.toList());
+		System.out.println("Doubled Numbers are ::");
+		System.out.println(doubleList);
+	}
+
+	private static void printNumbersInReverseSortedOrder(List<Integer> numbers) {
+		System.out.println("NUmbers in Reveer Sorted Order are ::");
+		numbers.stream().distinct().sorted(Comparator.reverseOrder()).forEach(System.out::println);
+	}
+
+	private static void printAllCoursesAsSortedInLengthrder(List<String> courses) {
+		System.out.println("Courses Sorted As Per their Length are ::");
+		courses.stream().sorted(Comparator.comparing(str -> str.length())).forEach(System.out::println);
+	}
+
+	private static void printAllCoursesAsSortedInReverseOrder(List<String> courses) {
+		System.out.println("Courses Sorted in Reverse Order are ::");
+		courses.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);
+	}
+
 	private static void printAllCoursesAsSorted(List<String> courses) {
 		System.out.println("Sorted Courses are ::");
 		courses.stream().sorted().forEach(System.out::println);
+		// A Comparator can also be used, but natural Order prints the same Sorted Order
+		//courses.stream().sorted(Comparator.naturalOrder()).forEach(System.out::println);
 	}
 
 	private static void printDisinctSortedNumbersInList(List<Integer> numbers) {
