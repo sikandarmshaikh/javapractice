@@ -1,4 +1,4 @@
-package com.system.design.programs;
+package java8.programming;
 
 import java.util.List;
 import java.util.function.Supplier;
