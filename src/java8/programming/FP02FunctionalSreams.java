@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class FP02Functional {
+public class FP02FunctionalSreams {
 
 	public static void main(String[] args) {
 		
