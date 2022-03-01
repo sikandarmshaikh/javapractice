@@ -28,5 +28,33 @@ public class PrintPrimeNumbersTillTheInputProvided {
 		}
 		System.out.println("Prime numbers from 1 to "+n+" are: ");
 		System.out.println(primeNumbers);
+		
+		for (int i = 0; i < n; i++) {
+			if(isPrime(i) == true) {
+				System.out.print(i);
+				System.out.print(" ");
+			}
+		}
+	}
+	
+	private static boolean isPrime(int n) {
+		
+		if(n==1) return false;
+		
+		if (n % 2 == 0) {
+			return n == 2;
+		}
+		if (n % 3 == 0) {
+			return n == 3;
+		}
+		if (n % 5 == 0) {
+			return n == 5;
+		}
+		for (int i = 7; i * i < n; i++) {
+			if (n % i == 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
