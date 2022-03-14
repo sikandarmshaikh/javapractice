@@ -87,23 +87,21 @@ public class TeamFormation
 
 	public static void main(String[] args)
 	{
-		int  			   i, n, t;
-		Scanner 		   scanner = new Scanner(System.in);
+		int i, n, t;
+		Scanner scanner = new Scanner(System.in);
 		ArrayList<Integer> team = new ArrayList<Integer>();
-		
+
 		t = scanner.nextInt();
-		while (t > 0)
-		{
-			n 	 = scanner.nextInt();
-			for (i = 0; i < n; ++i)
-			{
+		while (t > 0) {
+			n = scanner.nextInt();
+			for (i = 0; i < n; ++i) {
 				team.add(scanner.nextInt());
 			}
-			
+
 			findSmallestTeam(team);
 			--t;
 		}
-		
+
 		scanner.close();
 	}
 }
