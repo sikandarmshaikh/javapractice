@@ -1,7 +1,7 @@
 package com.interviews.experience;
 
 /**
- * 
+ * Uniphore 1st Round Interview question
  * Find the minimum value in the Integer Array
  * Examples: 
  * 1) array = null 
