@@ -51,15 +51,19 @@ public class OddEvenLinkedList {
 		ListNode odd = head;
 		ListNode even = head.next;
 		ListNode tmp = even;
-		
+		/**
+		 * To Understand below logic imagine the following
+		 * 1 -> 2 -> 3 -> 4 ->5 -> NULL
+		 * Odd = head(1), even = head.next (2)
+		 */
 		while(even!=null && even.next!=null) {
-			odd.next = even.next;
-			odd = odd.next;
-			even.next = odd.next;
-			even = even.next;
+			odd.next = even.next;  // 3
+			odd = odd.next; // 3
+			even.next = odd.next; // 4
+			even = even.next; // 4
 		}
-		
-		odd.next = tmp;
+		// Till Now Odd is exhausted, so it will now point to First Even element which is tmp
+		odd.next = tmp; // 2
 		return head;
 	}
 
