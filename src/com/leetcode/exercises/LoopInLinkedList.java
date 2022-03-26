@@ -1,12 +1,15 @@
 package com.leetcode.exercises;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 
 Given a linked list, determine if it has a cycle in it
 
 Examples:
-A → B → C → D - false
-
+1) A → B → C → D - false
+2) A → B → C → D -> E -> F -> C - true
 With cycle
 
 
@@ -22,7 +25,7 @@ public class LoopInLinkedList {
 	public static class Node{
 		
 		String data;
-		//Node prev;
+		//Node prev; // prev is used in Doubly linked list
 		Node next;
 		
 		
@@ -48,7 +51,21 @@ public class LoopInLinkedList {
 		//node.next.next.next.next.next.next = node.next.next; // Point to C
 		
 		Boolean isLoopPresent = findLoop(node);
-		System.out.println("isLoopPresent "+isLoopPresent);
+		System.out.println("findLoopEasyWay isLoopPresent "+findLoopEasyWay(node));
+		System.out.println("findLoop isLoopPresent "+isLoopPresent);
+	}
+	
+	private static Boolean findLoopEasyWay(Node head) {
+		
+		Set<Node> nodesSeen = new HashSet<>();
+		while (head != null) {
+			if (nodesSeen.contains(head)) {
+				return true;
+			}
+			nodesSeen.add(head);
+			head = head.next;
+		}
+		return false;
 	}
 
 	private static Boolean findLoop(Node node) {
@@ -67,9 +84,6 @@ public class LoopInLinkedList {
 			}
 			slow = slow.next;
 			fast = fast.next.next;
-				
-			
-
 		}
 		
 		return false;
