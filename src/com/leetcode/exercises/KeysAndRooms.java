@@ -58,6 +58,13 @@ import java.util.Stack;
  * 0 <= rooms[i][j] < n
  * All the values of rooms[i] are unique.
  * 
+ * Program Output:
+ * All elements in the Rooms are 
+ * [ 1, ][ 2, ][ 3, ][  ]
+ * All rooms are visited : true
+ * All elements in the Rooms are 
+ * [ 1,3, ][ 3,0,1, ][ 2, ][ 0, ]
+ * All rooms are visited : false
  */
 public class KeysAndRooms {
 
